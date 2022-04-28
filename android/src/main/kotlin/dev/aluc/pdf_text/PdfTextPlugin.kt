@@ -90,9 +90,12 @@ class PdfTextPlugin: FlutterPlugin, MethodCallHandler {
       val info = doc.documentInformation
 
       var creationDate: String? = null
-      if (info.creationDate != null) {
-        creationDate = info.creationDate.time.toString()
+      try {
+        if (info.creationDate != null) {
+          creationDate = info.creationDate.time.toString()
+        }
       }
+      catch(Exception e) {}
       var modificationDate: String? = null
       if (info.modificationDate != null) {
         modificationDate = info.modificationDate.time.toString()

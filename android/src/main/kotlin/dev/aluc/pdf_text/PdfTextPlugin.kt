@@ -95,7 +95,7 @@ class PdfTextPlugin: FlutterPlugin, MethodCallHandler {
           creationDate = info.creationDate.time.toString()
         }
       }
-      catch(Exception e) {}
+      catch(e : Exception) {}
       var modificationDate: String? = null
       if (info.modificationDate != null) {
         modificationDate = info.modificationDate.time.toString()
